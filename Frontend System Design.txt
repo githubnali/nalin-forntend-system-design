@@ -1,0 +1,186 @@
+Frontend System Design:
+
+Networking:- How Web Works
+
+1. Before request goes to the DNS check for below things
+
+a. Browser(Cache, Service Worker)
+b. Operating System
+c. Router
+d. ISP(Internet service provider)
+
+2. peering to avoid hobs to send the resp 
+3. Netflix is directly setting up the data at regional or local level ISP to send the resp to the user at faster speed.
+4. DNS:- domain and IP address mapping :- route --> top level domain, second level domain, third level domains
+5. ICANN:-
+6. WHoIS:- Privacy protection whois.com 
+7. DNS Lookup
+8.TCP Handshake
+9. SSL Handshake
+10. HTTP GET Request
+11. try to minimize bear minimum load of your data
+
+12.GET CSS:- Render blocking
+13.GETJS:- parser blocking
+
+
+Networking:- Communication protocols
+
+1. HTTP:- TCP connection --> HTTP Request --> HTTP Resp --> used for Web Browsing
+	TCP:-  3 way request
+		SYN + ACK
+		ACK
+	ex:- courier boy send OTP receieve the order successfully
+2. HTTp/3(quic):- UDP connection:- make the things fast :- Video conferencing
+	1. header compression
+	2. fatser
+	3. improve performance
+	4. better network congestion
+
+
+3. HTTPS:- on top of the TCP security layer will be there to protect
+4. Web sockets:- Realtime data transmission and live chat
+5. SMTP:- SMTP server  receiever :- sending/receieve mails
+6. FTP:- file transfer protocol:- controil channel  data channel --> used for upload /download
+
+1. HTTP (HyperText Transfer Protocol)
+How it Works:
+	1. Client-server model: The browser (client) sends a request, and the server responds with content.
+	2. Stateless: Each request is independent; no memory of previous interactions.
+	3. Operates over TCP port 80.
+
+Used in:
+	Loading web pages (HTML, CSS, JS)
+	REST APIs for client-server communication
+	Web crawlers (e.g., Googlebot)
+
+2. HTTP/3 (with QUIC)
+How it Works:
+	1. Built on QUIC (Quick UDP Internet Connections) instead of TCP.
+	2. Offers multiplexing without Head-of-Line blocking (unlike HTTP/2).
+	3. Uses UDP, includes built-in TLS 1.3 encryption and faster handshakes.
+
+Benefits:
+	Faster page loads
+	Better performance on poor networks (mobile, Wi-Fi)
+Used in:
+	Modern browsers (Chrome, Firefox, Edge)
+	Websites like Google, YouTube, Facebook
+	CDN providers like Cloudflare
+
+3. HTTPS (HTTP Secure)
+How it Works:
+	HTTP over TLS (SSL): Encrypts data sent between client and server.
+	Uses port 443.
+	Involves SSL/TLS handshake, certificate verification, then encrypted communication.
+
+Key Features:
+	Prevents eavesdropping and MITM attacks
+	Data integrity and confidentiality
+
+Used in:
+	Secure websites (eCommerce, banking)
+	All modern web traffic (due to SEO, privacy, and regulations like GDPR)
+
+🔁 4. WebSockets
+✅ How it Works:
+Establishes a persistent, full-duplex connection between client and server.
+
+Starts as HTTP, then upgrades to WebSocket protocol.
+
+Runs over TCP port 80/443 (same as HTTP/HTTPS).
+
+🔄 Advantages:
+Low latency, bi-directional communication
+
+Efficient for real-time updates
+
+🔍 Used in:
+Chat apps (Slack, WhatsApp Web)
+
+Real-time dashboards
+
+Online gaming
+
+Stock price tickers, live scores
+
+📦 5. TCP (Transmission Control Protocol)
+✅ How it Works:
+Connection-oriented: 3-way handshake (SYN, SYN-ACK, ACK)
+
+Reliable, ordered, and error-checked delivery
+
+Manages flow control and retransmission
+
+🔍 Used in:
+HTTP/HTTPS
+
+FTP
+
+SMTP (email)
+
+SSH, Telnet
+
+Any app that requires data reliability
+
+🚀 6. UDP (User Datagram Protocol)
+✅ How it Works:
+Connectionless: No handshake or state
+
+Sends datagrams without ensuring delivery or order
+
+Lower latency, less overhead
+
+🔍 Used in:
+DNS (domain name resolution)
+
+Video/voice streaming (Zoom, Skype)
+
+Online gaming (Fortnite, PUBG)
+
+HTTP/3 (QUIC layer)
+
+📧 7. SMTP (Simple Mail Transfer Protocol)
+✅ How it Works:
+Used to send emails from client to server or between servers.
+
+Operates over port 25 (or 587 with TLS).
+
+Only for sending, not receiving.
+
+🔄 Email Flow:
+User writes email
+
+SMTP sends it to the recipient’s mail server
+
+That server stores it for retrieval (via IMAP/POP3)
+
+🔍 Used in:
+Email clients (Outlook, Thunderbird)
+
+Webmail systems (Gmail, Yahoo)
+
+Notification systems in web apps
+
+📂 8. FTP (File Transfer Protocol)
+✅ How it Works:
+Transfers files between client and server
+
+Uses two channels:
+
+Command channel (port 21): Sends commands
+
+Data channel (port 20): Sends file data
+
+⚠️ Security Note:
+Basic FTP is unencrypted (use FTPS or SFTP for secure transfers)
+
+🔍 Used in:
+Uploading/downloading files to web servers
+
+Managing web hosting content
+
+Transferring logs, datasets, or backups
+
+---------------------------------------------------------------------------------------------------------------
+
